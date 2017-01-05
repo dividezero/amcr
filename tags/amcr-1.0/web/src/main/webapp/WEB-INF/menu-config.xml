@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MenuConfig>
+    <Displayers>
+        <Displayer name="Velocity" type="net.sf.navigator.displayer.VelocityMenuDisplayer"/>
+    </Displayers>
+    <Menus>
+        <Menu name="Home" title="home.title" page="/home" roles="ROLE_ADMIN,ROLE_USER"/>
+        <Menu name="UserMenu" title="menu.user" description="User Menu" page="/userform" roles="ROLE_ADMIN"/>
+
+        <!--MEMBERS-->
+        <Menu name="MemberFormMenu" title="menu.edit.member.details" description="Member Menu" page="/memberform" roles="ROLE_MEMBER"/>
+
+        <!--COOP-->
+        <Menu name="CoopFormMenu" title="menu.coop" description="Coop Menu" page="/coopform" roles="ROLE_COOP" />
+        <Menu name="CoopMemberMenu" title="coopMemberList.title" description="MemberMenu" page="/members" roles="ROLE_COOP" />
+
+        <!--ADMIN-->
+        <Menu name="CoopMenu" title="coopList.title" description="Coop Menu" page="/coops" roles="ROLE_ADMIN" />
+        <Menu name="MemberMenu" title="memberList.title" page="/members" roles="ROLE_ADMIN" />
+        <Menu name="SurveysMenu" title="menu.survey" description="Surveys Menu" page="/surveys" roles="ROLE_ADMIN"/>
+        <Menu name="AdminMenu" title="menu.admin" description="Admin Menu" roles="ROLE_ADMIN">
+            <Item name="ViewUsers" title="menu.admin.users" page="/admin/users"/>
+            <Item name="ActiveUsers" title="home.activeUsers" page="/admin/activeUsers"/>
+            <Item name="EmployerMenu" title="employerList.title" page="/employers"/>
+            <Item name="BankMenu" title="bankList.title" page="/banks"/>
+            <Item name="CoopBusinessTypeItem" title="coopBusinessTypeList.title" page="/coopBusinessTypes"/>
+            <Item name="AmcrLookupMenu" title="amcrLookupList.title" page="/amcrLookups"/>
+            <Item name="SystemSettingMenu" title="systemSettingList.title" page="/systemSettings"/>
+            <Item name="ReloadContext" title="menu.admin.reload" page="/admin/reload"/>
+            <Item name="ViewDocumentStoreMenu" title="document.store.title"
+                  description="ViewDocumentStore" page="/documentStore" />
+            <!--<Item name="FileUpload" title="menu.selectFile" page="/fileupload"/>-->
+        </Menu>
+        <Menu name="Logout" title="user.logout" page="/logout" roles="ROLE_ADMIN,ROLE_USER"/>
+
+    </Menus>
+
+
+
+
+
+
+
+
+
+</MenuConfig>

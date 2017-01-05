@@ -1,0 +1,32 @@
+<!-- NOTE: If you're working offline, you might have to change the DOCTYPE to the following:
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">-->
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <mapping class="com.angkasa.model.User"/>
+        <mapping class="com.angkasa.model.Role"/>
+        <mapping class="com.angkasa.model.ContactPerson"/>
+        <mapping class="com.angkasa.model.CoopBusinessType"/>
+        <mapping class="com.angkasa.model.Coop"/>
+        <mapping class="com.angkasa.model.Member"/>
+        <mapping class="com.angkasa.model.CoopMember"/>
+        <mapping class="com.angkasa.model.Survey"/>
+        <mapping class="com.angkasa.model.SurveyQuestion"/>
+        <mapping class="com.angkasa.model.SurveyQuestionChoice"/>
+        <mapping class="com.angkasa.model.SurveyResponse"/>
+        <mapping class="com.angkasa.model.SurveyResponseAnswer"/>
+        <mapping class="com.angkasa.model.Employer"/>
+        <mapping class="com.angkasa.model.EmployerImport"/>
+        <mapping class="com.angkasa.model.Document"/>
+        <mapping class="com.angkasa.model.DocumentData"/>
+        <mapping class="com.angkasa.model.MemberImport"/>
+        <mapping class="com.angkasa.model.MemberEmployer"/>
+        <mapping class="com.angkasa.model.AmcrLookup"/>
+        <mapping class="com.angkasa.model.Bank"/>
+        <mapping class="com.angkasa.model.CoopImport"/>
+        <mapping class="com.angkasa.model.SystemSetting"/>
+    </session-factory>
+</hibernate-configuration>

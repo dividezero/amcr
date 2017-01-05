@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <table name="app_user">
+        <column>id</column>
+        <column>username</column>
+        <column>password</column>
+        <column>first_name</column>
+        <column>last_name</column>
+        <column>address</column>
+        <column>city</column>
+        <column>country</column>
+        <column>email</column>
+        <column>phone_number</column>
+        <column>postal_code</column>
+        <column>province</column>
+        <column>website</column>
+        <column>password_hint</column>
+        <column>version</column>
+        <column>account_enabled</column>
+        <column>account_expired</column>
+        <column>account_locked</column>
+        <column>credentials_expired</column>
+        <column>coop_id</column>
+        <row>
+            <value description="id">-2</value>
+            <value description="username">admin</value>
+            <value description="password">$2a$10$byBiSWrtxu7BS0tCk44Zg.EoJgj8bntkMqMfzwzv7aXF5hwvlLl.a</value>
+            <value description="first_name">admin</value>
+            <value description="last_name"></value>
+            <value description="address"></value>
+            <value description="city">Kuala Lumpur</value>
+            <value description="country">Malaysia</value>
+            <value description="email">test@printistechnologies.com</value>
+            <value description="phone_number"></value>
+            <value description="postal_code">47810</value>
+            <value description="province">Selangor</value>
+            <value description="website"></value>
+            <value description="password_hint"><![CDATA[Amcr admin default]]></value>
+            <value description="version">1</value>
+            <value description="account_enabled">1</value>
+            <value description="account_expired">0</value>
+            <value description="account_locked">0</value>
+            <value description="credentials_expired">0</value>
+            <null/>
+        </row>
+        <row>
+            <value description="id">-6</value>
+            <value description="username">dmsuser</value>
+            <value description="password">$2a$10$kB91VieQSigaVd3Mtj0lGOLIINHBw2rxKmlby2KziirAaGtTP50Cy</value>
+            <value description="first_name">dmsuser</value>
+            <value description="last_name"></value>
+            <value description="address"></value>
+            <value description="city">Kuala Lumpur</value>
+            <value description="country">MY</value>
+            <value description="email">dmsuser@printistechnologies.com</value>
+            <value description="phone_number"></value>
+            <value description="postal_code"></value>
+            <value description="province">WP</value>
+            <value description="website"></value>
+            <value description="password_hint"><![CDATA[dmsuser]]></value>
+            <value description="version">1</value>
+            <value description="account_enabled">1</value>
+            <value description="account_expired">0</value>
+            <value description="account_locked">0</value>
+            <value description="credentials_expired">0</value>
+            <null/>
+        </row>
+    </table>
+    <table name="role">
+        <column>id</column>
+        <column>name</column>
+        <column>description</column>
+        <row>
+            <value description="id">-1</value>
+            <value description="name">ROLE_ADMIN</value>
+            <value description="description"><![CDATA[Administrator role (can edit Users)]]></value>
+        </row>
+        <row>
+            <value description="id">-2</value>
+            <value description="name">ROLE_USER</value>
+            <value description="description"><![CDATA[Default role for all Users]]></value>
+        </row>
+        <row>
+            <value description="id">-3</value>
+            <value description="name">ROLE_MEMBER</value>
+            <value description="description"><![CDATA[Default role for all Users]]></value>
+        </row>
+        <row>
+            <value description="id">-4</value>
+            <value description="name">ROLE_COOP</value>
+            <value description="description"><![CDATA[Default role for all Users]]></value>
+        </row>
+        <row>
+            <value description="id">-5</value>
+            <value description="name">ROLE_ANGKASA</value>
+            <value description="description"><![CDATA[Default role for all Users]]></value>
+        </row>
+        <row>
+            <value description="id">-6</value>
+            <value description="name">ROLE_DMS</value>
+            <value description="description"><![CDATA[Default role for DMS API Users]]></value>
+        </row>
+        <row>
+            <value description="id">-7</value>
+            <value description="name">ROLE_EVENT</value>
+            <value description="description"><![CDATA[Default role for Event Users]]></value>
+        </row>
+    </table>
+    <table name="user_role">
+        <column>user_id</column>
+        <column>role_id</column>
+        <row>
+            <value description="user_id">-2</value>
+            <value description="role_id">-1</value>
+        </row>
+        <row>
+            <value description="user_id">-6</value>
+            <value description="role_id">-2</value>
+        </row>
+        <row>
+            <value description="user_id">-6</value>
+            <value description="role_id">-6</value>
+        </row>
+    </table>
+    <!--AmcrLookup-START-->
+    <table name="amcr_lookup">
+        <column>id</column>
+        <column>createdBy</column>
+        <column>createdTime</column>
+        <column>modifiedBy</column>
+        <column>modifiedTime</column>
+        <column>head</column>
+        <column>table_name</column>
+        <column>tail</column>
+        <column>tail_length</column>
+        <column>tail_pad</column>
+        <row>
+            <value description="id">-1</value>
+            <value description="createdBy">admin</value>
+            <value description="createdTime">2014-11-03</value>
+            <value description="modifiedBy">admin</value>
+            <value description="modifiedTime">2014-11-03</value>
+            <value description="head">CP</value>
+            <value description="table_name">COOP</value>
+            <value description="tail">1</value>
+            <value description="tail_length">5</value>
+            <value description="tail_pad">0</value>
+        </row>
+        <row>
+            <value description="id">-2</value>
+            <value description="createdBy">admin</value>
+            <value description="createdTime">2014-11-03</value>
+            <value description="modifiedBy">admin</value>
+            <value description="modifiedTime">2014-11-03</value>
+            <value description="head">MM</value>
+            <value description="table_name">MEMBER</value>
+            <value description="tail">1</value>
+            <value description="tail_length">5</value>
+            <value description="tail_pad">0</value>
+        </row>
+    </table>
+    <!--AmcrLookup-END-->
+    <!--SystemSetting-START-->
+    <table name="system_setting">
+        <column>id</column>
+        <column>createdBy</column>
+        <column>createdTime</column>
+        <column>modifiedBy</column>
+        <column>modifiedTime</column>
+        <column>description</column>
+        <column>displayName</column>
+        <column>propertyName</column>
+        <column>propertyValue</column>
+        <column>is_boolean_setting</column>
+        <row>
+            <value description="id">-1</value>
+            <value description="createdBy">admin</value>
+            <value description="createdTime">2014-11-10</value>
+            <value description="modifiedBy">admin</value>
+            <value description="modifiedTime">2014-11-10</value>
+            <value description="description">If this setting is true, a password URL will be shown after creating a coop or member.</value>
+            <value description="displayName">Show password URL</value>
+            <value description="propertyName">show.password.url</value>
+            <value description="propertyValue">false</value>
+            <value description="is_boolean_setting">1</value>
+        </row>
+        <row>
+            <value description="id">-2</value>
+            <value description="createdBy">admin</value>
+            <value description="createdTime">2014-11-10</value>
+            <value description="modifiedBy">admin</value>
+            <value description="modifiedTime">2014-11-10</value>
+            <value description="description">If this setting is true, member import will be using coop code, else, it will be using AMCR code.</value>
+            <value description="displayName">Use coop code in member import</value>
+            <value description="propertyName">memberimport.use.coopcode</value>
+            <value description="propertyValue">true</value>
+            <value description="is_boolean_setting">1</value>
+        </row>
+        <row>
+            <value description="id">-3</value>
+            <value description="createdBy">admin</value>
+            <value description="createdTime">2014-11-10</value>
+            <value description="modifiedBy">admin</value>
+            <value description="modifiedTime">2014-11-10</value>
+            <value description="description">If this setting is true, DMS API is enabled and accessible through '/dmsapi/{username}/{password}/member/{icNumber}' and '/dmsapi/{username}/{password}/update/{icNumber}/{phoneNum}/{status}'</value>
+            <value description="displayName">Enable DMS API</value>
+            <value description="propertyName">dmsapi.enabled</value>
+            <value description="propertyValue">true</value>
+            <value description="is_boolean_setting">1</value>
+        </row>
+    </table>
+    <!--SystemSetting-END-->
+</dataset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

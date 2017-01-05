@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE form-validation PUBLIC
+        "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.3.0//EN"
+        "http://jakarta.apache.org/commons/dtds/validator_1_3_0.dtd">
+
+<form-validation>
+    <global>
+        <constant>
+            <constant-name>phone</constant-name>
+            <constant-value>^\(?(\d{3})\)?[-| ]?(\d{3})[-| ]?(\d{4})$</constant-value>
+        </constant>
+        <constant>
+            <constant-name>zip</constant-name>
+            <constant-value>^\d{5}\d*$</constant-value>
+        </constant>
+        <constant>
+            <constant-name>currency</constant-name>
+            <constant-value>^\d{1,3}(,?\d{1,3})*\.?(\d{1,2})?$</constant-value>
+        </constant>
+        <constant>
+            <constant-name>numericNonZero</constant-name>
+            <constant-value>^[1-9]+[0-9]*$|^0[0-9]*[1-9]+[0-9]*$</constant-value>
+        </constant>
+    </global>
+    <formset>
+        <form name="fileUpload">
+            <field property="name" depends="required">
+                <arg key="uploadForm.name"/>
+            </field>
+            <!-- Client-side Javascript won't catch this in IE, but server-side will -->
+            <field property="file" depends="required">
+                <arg key="uploadForm.file"/>
+            </field>
+        </form>
+        <form name="user">
+            <field property="username" depends="required">
+                <arg key="user.username"/>
+            </field>
+            <field property="email" depends="required,email">
+                <arg key="user.email"/>
+            </field>
+            <!--<field property="passwordHint" depends="required">-->
+                <!--<arg key="user.passwordHint"/>-->
+            <!--</field>-->
+        </form>
+        <form name="signup" extends="user">
+            <field property="icNumber" depends="required,mask">
+                <arg key="user.icNumber"/>
+                <msg name="mask" key="errors.incorrectFormat" />
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>${numericNonZero}</var-value>
+                </var>
+            </field>
+        </form>
+        <!--ContactPerson-START-->
+        <form name="contactPerson">
+            <field property="email" depends="required">
+                <arg key="contactPerson.email"/>
+            </field>
+            <field property="name" depends="required">
+                <arg key="contactPerson.name"/>
+            </field>
+            <field property="workPhoneNo" depends="required">
+                <arg key="contactPerson.workPhoneNo"/>
+            </field>
+        </form>
+        <!--ContactPerson-END-->
+        <!--CoopBusinessType-START-->
+        <form name="coopBusinessType">
+            <field property="code" depends="required">
+                <arg key="coopBusinessType.code"/>
+            </field>
+            <field property="description" depends="required">
+                <arg key="coopBusinessType.description"/>
+            </field>
+            <field property="name" depends="required">
+                <arg key="coopBusinessType.name"/>
+            </field>
+        </form>
+        <!--CoopBusinessType-END-->
+        <!--Coop-START-->
+        <form name="coop">
+            <field property="coopCode" depends="required">
+                <arg key="coop.coopCode"/>
+            </field>
+            <field property="name" depends="required">
+                <arg key="coop.name"/>
+            </field>
+            <field property="phoneNo" depends="mask">
+                <arg key="coop.phoneNo"/>
+                <msg name="mask" key="errors.incorrectFormat" />
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>${numericNonZero}</var-value>
+                </var>
+            </field>
+            <!--<field property="incorporatedDate" depends="date">-->
+                <!--<arg key="coop.incorporatedDate"/>-->
+            <!--</field>-->
+            <field property="email" depends="required,email">
+                <arg key="coop.email"/>
+            </field>
+            <field property="email2" depends="email">
+                <arg key="coop.email2"/>
+            </field>
+            <!--<field property="user.username" depends="required">-->
+                <!--<arg key="user.username"/>-->
+            <!--</field>-->
+            <!--<field property="user.email" depends="required,email">-->
+                <!--<arg key="user.email"/>-->
+            <!--</field>-->
+        </form>
+        <!--Coop-END-->
+        <!--Member-START-->
+        <form name="member">
+            <field property="name" depends="required">
+                <arg key="member.name"/>
+            </field>
+            <field property="icNumber" depends="required">
+                <arg key="member.icNumber"/>
+            </field>
+            <field property="email" depends="required,email">
+                <arg key="member.email"/>
+            </field>
+            <field property="email2" depends="email">
+                <arg key="member.email2"/>
+            </field>
+            <field property="phoneNo" depends="mask">
+                <arg key="member.phoneNo"/>
+                <msg name="mask" key="errors.incorrectFormat" />
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>${numericNonZero}</var-value>
+                </var>
+            </field>
+            <!--<field property="user.email" depends="required,email">-->
+                <!--<arg key="user.email"/>-->
+            <!--</field>-->
+        </form>
+        <!--Member-END-->
+        <!--CoopMember-START-->
+        <form name="coopMember">
+        </form>
+        <!--CoopMember-END-->
+        <!--Survey-START-->
+        <form name="survey">
+            <field property="name" depends="required">
+                <arg key="survey.name"/>
+            </field>
+        </form>
+        <!--Survey-END-->
+        <!--SurveyResponse-START-->
+        <form name="surveyResponse">
+            <field property="surveyId" depends="required">
+                <arg key="surveyResponse.surveyId"/>
+            </field>
+        </form>
+        <!--SurveyResponse-END-->
+        <!--SurveyQuestion-START-->
+        <form name="surveyQuestion">
+            <field property="description" depends="required">
+                <arg key="surveyQuestion.description"/>
+            </field>
+            <field property="questionType" depends="required">
+                <arg key="surveyQuestion.questionType"/>
+            </field>
+            <field property="surveyId" depends="required">
+                <arg key="surveyQuestion.surveyId"/>
+            </field>
+        </form>
+        <!--SurveyQuestion-END-->
+        <!--SurveyQuestionChoice-START-->
+        <form name="surveyQuestionChoice">
+            <field property="description" depends="required">
+                <arg key="surveyQuestionChoice.description"/>
+            </field>
+            <field property="sequence" depends="required">
+                <arg key="surveyQuestionChoice.sequence"/>
+            </field>
+            <field property="surveyQuestionId" depends="required">
+                <arg key="surveyQuestionChoice.surveyQuestionId"/>
+            </field>
+        </form>
+        <!--SurveyQuestionChoice-END-->
+        <!--SurveyResponseAnswer-START-->
+        <form name="surveyResponseAnswer">
+            <field property="surveyResponseId" depends="required">
+                <arg key="surveyResponseAnswer.surveyResponseId"/>
+            </field>
+        </form>
+        <!--SurveyResponseAnswer-END-->
+        <!--Employer-START-->
+        <form name="employer">
+            <field property="employerCode" depends="required">
+                <arg key="employer.employerCode"/>
+            </field>
+            <field property="name" depends="required">
+                <arg key="employer.name"/>
+            </field>
+        </form>
+        <!--Employer-END-->
+        <!--EmployerImport-START-->
+        <form name="employerImport">
+
+        </form>
+        <!--EmployerImport-END-->
+        <!--MemberImport-START-->
+        <form name="memberImport">
+            <field property="name" depends="required">
+                <arg key="memberImport.name"/>
+            </field>
+        </form>
+        <!--MemberImport-END-->
+        <!--MemberEmployer-START-->
+        <form name="memberEmployer">
+        </form>
+        <!--MemberEmployer-END-->
+        <!--AmcrLookup-START-->
+        <form name="amcrLookup">
+            <field property="tableName" depends="required">
+                <arg key="amcrLookup.tableName"/>
+            </field>
+        </form>
+        <!--AmcrLookup-END-->
+        <!--Bank-START-->
+        <form name="bank">
+            <field property="code" depends="required">
+                <arg key="bank.code"/>
+            </field>
+            <field property="name" depends="required">
+                <arg key="bank.name"/>
+            </field>
+        </form>
+        <!--Bank-END-->
+        <!--CoopImport-START-->
+        <form name="coopImport">
+            <field property="name" depends="required">
+                <arg key="coopImport.name"/>
+            </field>
+        </form>
+        <!--CoopImport-END-->
+        <!--SystemSetting-START-->
+        <form name="systemSetting">
+            <field property="propertyName" depends="required">
+                <arg key="systemSetting.propertyName"/>
+            </field>
+        </form>
+        <!--SystemSetting-END-->
+    </formset>
+</form-validation>

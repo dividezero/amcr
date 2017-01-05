@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="appfuse-spring:war exploded">
+    <output-path>$PROJECT_DIR$/web/target/appfuse-root/appfuse-web/appfuse-spring/target/appfuse-web-3.0.0</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="appfuse-spring" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="appfuse-spring/web/Web" />
+    </root>
+  </artifact>
+</component>
